@@ -1,0 +1,151 @@
+{
+  "tasks": [
+    {
+      "id": "t-001",
+      "title": "Choose one ICP and one niche pain",
+      "description": "Finalize the exact segment and pain LeadGent will own in outbound conversations.",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": "2222-02-10",
+      "tags": [
+        "strategy",
+        "positioning"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T13:46:44Z"
+    },
+    {
+      "id": "t-002",
+      "title": "Finalize flagship service and add-on",
+      "description": "Define one core service package plus one expansion service.",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": "",
+      "tags": [
+        "offer"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    },
+    {
+      "id": "t-003",
+      "title": "Define offer scope, exclusions, and pricing floor",
+      "description": "Avoid custom one-off delivery; set boundaries before outreach volume increases.",
+      "status": "done",
+      "priority": "high",
+      "dueDate": "",
+      "tags": [
+        "offer",
+        "pricing"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T13:47:27Z"
+    },
+    {
+      "id": "t-004",
+      "title": "Define lead sourcing channels and list criteria",
+      "description": "Document where leads come from and strict inclusion filters.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": "",
+      "tags": [
+        "sourcing"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    },
+    {
+      "id": "t-005",
+      "title": "Define enrichment fields and QA checks",
+      "description": "Set mandatory enrichment schema and pass/fail data quality checks.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": "",
+      "tags": [
+        "enrichment",
+        "qa"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    },
+    {
+      "id": "t-006",
+      "title": "Draft two outbound sequence variants",
+      "description": "Prepare two message angles and CTA hypotheses for early tests.",
+      "status": "in_progress",
+      "priority": "high",
+      "dueDate": "",
+      "tags": [
+        "copy",
+        "campaign"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    },
+    {
+      "id": "t-007",
+      "title": "Finalize client onboarding template",
+      "description": "Lock kickoff flow, access checklist, and dependencies.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": "",
+      "tags": [
+        "delivery",
+        "onboarding"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    },
+    {
+      "id": "t-008",
+      "title": "Create weekly reporting SOP",
+      "description": "Standardize weekly client update structure and cadence.",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": "",
+      "tags": [
+        "delivery",
+        "reporting"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    },
+    {
+      "id": "t-009",
+      "title": "Close first client with clear scope",
+      "description": "Prioritize clean scope over speed; avoid unclear commitments.",
+      "status": "todo",
+      "priority": "high",
+      "dueDate": "",
+      "tags": [
+        "sales"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    },
+    {
+      "id": "t-010",
+      "title": "Document first case study asset",
+      "description": "Capture before/after, actions taken, and measurable outcome.",
+      "status": "todo",
+      "priority": "low",
+      "dueDate": "",
+      "tags": [
+        "proof",
+        "marketing"
+      ],
+      "notes": [],
+      "createdAt": "2026-03-06T00:00:00Z",
+      "updatedAt": "2026-03-06T00:00:00Z"
+    }
+  ]
+}

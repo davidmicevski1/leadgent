@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeadGent Control Center</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape shape-a"></div>
+    <div class="bg-shape shape-b"></div>
+
+    <main class="layout">
+      <header class="hero panel">
+        <div>
+          <p class="eyebrow">LeadGent Agency</p>
+          <h1>Execution Control Center</h1>
+          <p class="subtitle">Plan, track, and edit your agency playbook in one place.</p>
+        </div>
+        <div class="hero-meta">
+          <p><span id="task-count">0</span> tasks tracked</p>
+          <p><span id="doc-count">0</span> docs editable</p>
+          <div class="auth-row">
+            <span id="current-user">-</span>
+            <button id="logout-button" type="button" class="btn btn-ghost">Log out</button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="panel top-nav" aria-label="Main sections">
+        <button class="nav-btn is-active" data-view="tasks-view" type="button">Tasks</button>
+        <button class="nav-btn" data-view="docs-view" type="button">Docs</button>
+      </nav>
+
+      <section id="tasks-view" class="view" aria-labelledby="tasks-title">
+        <article class="panel">
+          <div class="board-header">
+            <h2 id="tasks-title">Task Board</h2>
+            <button id="open-add-task-modal" type="button" class="btn btn-add-small" aria-label="Add new task">
+              <span class="plus">+</span>
+              <span>Add Task</span>
+            </button>
+          </div>
+          <div class="board" id="task-board"></div>
+        </article>
+      </section>
+
+      <section id="docs-view" class="view hidden" aria-labelledby="docs-title">
+        <article class="panel docs-panel">
+          <div class="docs-header">
+            <h2 id="docs-title">Docs Editor</h2>
+            <button id="save-doc-button" class="btn btn-primary" type="button">Save Doc</button>
+          </div>
+
+          <div class="docs-controls">
+            <label>
+              Document
+              <select id="doc-select"></select>
+            </label>
+            <p id="doc-status" class="doc-status">Select a document to start editing.</p>
+          </div>
+
+          <textarea
+            id="doc-editor"
+            class="doc-editor"
+            spellcheck="false"
+            placeholder="Document content will load here..."
+          ></textarea>
+        </article>
+      </section>
+    </main>
+
+    <div id="add-task-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3>New Task</h3>
+          <button class="icon-btn" type="button" data-close-modal="add-task-modal" aria-label="Close">x</button>
+        </div>
+
+        <form id="new-task-form" class="task-form">
+          <label>
+            Title
+            <input type="text" id="new-title" required placeholder="Example: Launch first outbound campaign" />
+          </label>
+          <label>
+            Description
+            <textarea id="new-description" rows="3" placeholder="What needs to be done and why?"></textarea>
+          </label>
+          <div class="inline-fields">
+            <label>
+              Status
+              <select id="new-status">
+                <option value="todo">To Do</option>
+                <option value="in_progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </label>
+            <label>
+              Priority
+              <select id="new-priority">
+                <option value="high">High</option>
+                <option value="medium" selected>Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </label>
+            <label>
+              Due Date
+              <input type="date" id="new-due-date" />
+            </label>
+          </div>
+          <label>
+            Tags (comma separated)
+            <input type="text" id="new-tags" placeholder="outbound, copy, icp" />
+          </label>
+          <div class="modal-actions">
+            <button type="button" class="btn" data-close-modal="add-task-modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Create Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="task-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card modal-card-wide">
+        <div class="modal-head">
+          <h3 id="task-modal-title">Task</h3>
+          <button class="icon-btn" type="button" data-close-modal="task-modal" aria-label="Close">x</button>
+        </div>
+
+        <form id="edit-task-form" class="task-form">
+          <label>
+            Title
+            <input type="text" id="edit-title" required />
+          </label>
+          <label>
+            Description
+            <textarea id="edit-description" rows="4"></textarea>
+          </label>
+          <div class="inline-fields">
+            <label>
+              Status
+              <select id="edit-status">
+                <option value="todo">To Do</option>
+                <option value="in_progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+            </label>
+            <label>
+              Priority
+              <select id="edit-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </label>
+            <label>
+              Due Date
+              <input type="date" id="edit-due-date" />
+            </label>
+          </div>
+          <label>
+            Tags (comma separated)
+            <input type="text" id="edit-tags" />
+          </label>
+          <div class="modal-actions modal-actions-spread">
+            <button id="delete-task-button" type="button" class="btn btn-danger">Delete Task</button>
+            <div class="right-actions">
+              <button type="button" class="btn" data-close-modal="task-modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save Task</button>
+            </div>
+          </div>
+        </form>
+
+        <h3>Task Notes</h3>
+        <ul id="task-notes" class="notes-list"></ul>
+
+        <form id="add-note-form" class="note-form">
+          <textarea id="new-note-text" rows="2" placeholder="Add progress updates, blockers, ideas..."></textarea>
+          <button type="submit" class="btn">Add Note</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

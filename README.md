@@ -2,30 +2,51 @@
 
 LeadGent is an execution-first agency focused on outbound and GTM automations.
 
-This repo is intentionally plan-first right now.
-No sample stats, dashboards, or fake reporting data are stored here.
-Performance reporting will be integrated later via API from your live tools.
+This repo now includes a local control center where you can:
+- Create and update tasks
+- Move tasks across `To Do`, `In Progress`, and `Done` with drag-and-drop
+- Delete tasks
+- Add notes to existing tasks
+- Edit your markdown docs directly in the browser
 
-## Current Focus
+## Project Structure
 
-- Build a sharp agency offer
-- Build repeatable delivery workflows
-- Build a clear launch task system
+- `dashboard/`: Frontend UI for task + docs management
+- `scripts/dashboard_server.py`: Local API/static server
+- `scripts/start_dashboard.sh`: Shortcut to run the dashboard
+- `data/tasks.json`: Persisted task data
+- `docs/`: Strategy and launch documents
+- `templates/`: Reusable delivery templates
 
-## Repository Structure
+## Run Dashboard
 
-- `docs/`: Strategy, launch plans, operating rules, and task plans
-- `templates/`: Reusable assets for delivery and client management
+```bash
+./scripts/start_dashboard.sh 8080
+```
 
-## Start Here
+Open:
 
-1. Define your exact ICP and flagship offer in `docs/01-positioning-and-focus.md`.
-2. Follow the 90-day roadmap in `docs/02-90-day-plan.md`.
-3. Execute tasks from `docs/06-initial-task-board.md`.
+- `http://127.0.0.1:8080/dashboard/`
 
-## Rule
+Login:
 
-Every week must create all three outcomes:
-- Pipeline progress
-- Delivery system improvement
-- One documented learning
+- `David`
+- `Viktorija`
+
+Default passwords (change before hosting):
+
+- `ChangeMe-David`
+- `ChangeMe-Viktorija`
+
+For hosted use, set environment variables:
+
+```bash
+export LEADGENT_DAVID_PASSWORD='your-strong-password'
+export LEADGENT_VIKTORIJA_PASSWORD='your-strong-password'
+```
+
+## Notes
+
+- Task changes are saved to `data/tasks.json`.
+- Doc edits are saved directly to files under `docs/` and `templates/`.
+- Stats/API performance sync can be added later on top of this foundation.
